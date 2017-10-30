@@ -4,10 +4,10 @@ $(document).ready(function(){
     var comicVineAPI="https://comicvine.gamespot.com/api/search/?json_callback=?";
     $.getJSON( comicVineAPI,  {
       api_key: "05b4f8f5fda83cc6c9ff081e00bd78f0143e16ba",
-      query: "batman",
-      resources: "episode",
+      query: "iron man",
+      resources: "issue",
       limit: "5",
-      field_list: "id,name,image,api_detail_url,episode_number",
+      field_list: "id,image,description,issue_number,name",
       format: "jsonp"
     })
       .done(function( data){
@@ -18,13 +18,13 @@ $(document).ready(function(){
   function pushData(resultData){
     $('#table').bootstrapTable({
       columns: [{
-        field: 'episode_number',
-        title: 'Episode'
+        field: 'issue_number',
+        title: 'Issue'
       },{
         field: 'name',
         title: 'Title'
       },{
-        field: 'api_detail_url',
+        field: 'description',
         title: 'Detail Page',
         formatter: urlFormatter,
       },{
@@ -43,3 +43,9 @@ $(document).ready(function(){
     return `<a href="${value}">${value}</a>`;
   }
 });
+
+$('#goButton').click(function( event ) {
+      var searchTerm = $('#inputSearch').val();
+      event.preventDefault();
+      // console.log("My searchTerm is: " + searchTerm);
+    });
