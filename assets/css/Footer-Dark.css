@@ -128,3 +128,11 @@
   margin-left:8%;
 }
 
+#resultTable {
+  margin-top:20px;
+  margin-bottom:0px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
