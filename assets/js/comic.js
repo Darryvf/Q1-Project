@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
-  (function(){
+  function getComics(comicName){
+    // console.log(comicName);
     var comicVineAPI="https://comicvine.gamespot.com/api/search/?json_callback=?";
     $.getJSON( comicVineAPI,  {
       api_key: "05b4f8f5fda83cc6c9ff081e00bd78f0143e16ba",
-      query: "iron man",
+      query: comicName,
       resources: "issue",
       limit: "5",
       field_list: "id,image,description,issue_number,name",
@@ -12,8 +13,9 @@ $(document).ready(function(){
     })
       .done(function( data){
         pushData(data);
+        console.log(data);
       });
-  })();
+  };
 
   function pushData(resultData){
     $('#table').bootstrapTable({
@@ -42,10 +44,11 @@ $(document).ready(function(){
   function urlFormatter(value, row, index){
     return `<a href="${value}">${value}</a>`;
   }
+  $('#goButton').click(function(event) {
+    var searchTerm = $('#searchInput').val();
+    console.log(searchTerm);
+    event.preventDefault();
+    getComics(searchTerm);
+    // console.log("My searchTerm is: " + searchTerm);
+  });
 });
-
-$('#goButton').click(function( event ) {
-      var searchTerm = $('#inputSearch').val();
-      event.preventDefault();
-      // console.log("My searchTerm is: " + searchTerm);
-    });
