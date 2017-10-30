@@ -1,5 +1,5 @@
 .footer-dark {
-  padding:50px 0;
+  padding:0px 0;
   color:#f0f9ff;
   background-color:#282d32;
 }
@@ -86,5 +86,45 @@
   opacity:0.3;
   font-size:13px;
   margin-bottom:0;
+}
+
+#favoriteRow {
+  margin-top:10px;
+  margin-bottom:10px;
+  /*border:double;*/
+}
+
+#favCom {
+  border:double;
+}
+
+#issue {
+  border:double;
+}
+
+#description {
+  border:double;
+}
+
+#favCom {
+  border:solid;
+}
+
+#issue {
+  border:solid;
+}
+
+#description {
+  border:solid;
+}
+
+.btn.btn-default.btn-lg {
+  margin:25%;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+#expressive {
+  margin-left:8%;
 }
 
