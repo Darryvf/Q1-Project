@@ -5,13 +5,13 @@ $(document).ready(function(){
   });
 // console.log('hello world');
   function search(searchTerm){
-    console.log(searchTerm);
+    // console.log(searchTerm);
     var comicVineAPI="https://comicvine.gamespot.com/api/search/?json_callback=?";
     $.getJSON( comicVineAPI,  {
       api_key: "05b4f8f5fda83cc6c9ff081e00bd78f0143e16ba",
       query: searchTerm,
       resources: "issue",
-      limit: "5",
+      limit: "10",
       field_list: "id,image,description,issue_number,name",
       format: "jsonp"
     })
@@ -26,7 +26,7 @@ $(document).ready(function(){
         $('#resultTable').hide();
       } else {
         $('#table').bootstrapTable('load', resultData.results)
-        $('#resultsTotal p:first').text(`${resultData.number_of_page_results} results found.`)
+        $('#resultsTotal p:first').text(`${resultData.number_of_page_results} results found`)
         $('#resultTable').show();
       }
     }
@@ -52,8 +52,8 @@ $(document).ready(function(){
             'name': '',
             'description': '',
             'image.thumb_url': ''
-      }]
-    });
+        }]
+      });  
       $('#resultTable').hide();
       $('#resultsTotal').show();
       $('#searchInstruct').show();
