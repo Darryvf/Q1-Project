@@ -33,7 +33,13 @@ function imageFormatter(value, row, index){
     return `<img src="${value}">`;
   }
 }
-
+function urlFormatter(value, row, index){
+  if (value === undefined){
+    return "";
+  } else {
+    return `<a href="${value}">${value}</a>`;
+  }
+}
 $(document).ready(function(createTable){
 
   $(function (){
@@ -95,13 +101,7 @@ console.log('hello world');
       $('#searchInstruct').show();
   }
 
-  function imageFormatter(value, row, index){
-    if (value === undefined){
-      return "";
-    } else {
-      return `<img src="${value}">`;
-    }
-  }
+
   // $(function (){
   //   imageFormatter();
   // });
