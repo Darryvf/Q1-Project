@@ -1,83 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VanFleetQ1</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Averia+Libre:400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button1.css">
-    <link rel="stylesheet" href="assets/css/Slider_Carousel_webalgustocom.css">
-    <link rel="stylesheet" href="assets/css/Slider_Carousel_webalgustocom1.css">
-    <link rel="stylesheet" href="assets/css/Slider_Carousel_webalgustocom2.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-
-<body>
-    <nav class="navbar navbar-default navigation-clean-button" style="background-color:rgb(64,95,142);color:rgb(248,245,245);">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">My Favorite Comics</a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li role="presentation"><a href="index.html" style="color:rgb(249,246,246);">Home </a></li>
-                </ul>
-                <p class="navbar-text navbar-right actions" style="color:rgb(251,249,249);font-size:22px;">Log Out</p>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="searchForm">
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <div class="input-group">
-                            <div class="input-group-addon"><span>Search<i class="glyphicon glyphicon-search"></i></span></div>
-                            <input class="form-control" type="text" id="searchInput">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="button" id="goButton">Go!</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="searchInstruct">
-        <p>Search ideas: Charecter name, Comic name, Issue#...use your imagination!</p>
-    </div>
-    <div id="resultsTotal">
-        <p>No search preformed yet</p>
-    </div>
-    <div id="resultTable">
-        <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover" id="table">
-
-    </table>
-
-    </div>
-    <div class="footer-dark" style="height:51px;margin:0px;padding:0px;">
-        <footer>
-            <div class="container">
-                <p class="copyright"> Darrell VanFleet© 2017</p>
-            </div>
-        </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
-    <script src="assets/js/imports.js"></script>
-</body>
-
-</html> -->
 <!DOCTYPE html>
 <html>
 
@@ -113,13 +33,13 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container" id="searchContainer">
         <div class="searchForm">
             <div class="row">
                 <div class="col-md-12">
                     <form>
                         <div class="input-group">
-                            <div class="input-group-addon"><span>Search<i class="glyphicon glyphicon-search"></i></span></div>
+                            <div class="input-group-addon"><span>Search <i class="glyphicon glyphicon-search"></i></span></div>
                             <input class="form-control" type="text" id="inputSearch">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="button" id="goButton">Go!</button>
@@ -129,13 +49,12 @@
                 </div>
             </div>
         </div>
-    </div>
     <div id="searchInstruct">
-        <a style="font-size: 24px; color: black">  
-        <p>Search ideas: Charecter name, Comic name, Issue#...use your imagination!</p>
+        <a style="font-size: 24px; color: black">
+        <p><span id="searchName"></span>Search ideas: Character, name, Comic name, Issue#...use your imagination!</p>
     </div>
     <div id="resultsTotal">
-        <p>No search preformed yet</p>
+        <p>No search performed yet</p>
     </div>
     <div id="resultTable">
         <div class="table-responsive">
@@ -143,6 +62,7 @@
             </table>
         </div>
     </div>
+  </div>
     <div class="footer-dark" style="height:51px;margin:0px;padding:0px;">
         <footer>
             <div class="container">
@@ -155,6 +75,7 @@
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
     <script src="assets/js/imports.js"></script>
+    <script src="assets/js/search.js"></script>
 </body>
 
 </html>
